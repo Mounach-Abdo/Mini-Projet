@@ -46,7 +46,10 @@ class PhoneController extends Controller
      */
     public function show(Phone $phone)
     {
-        //
+        $phone = Phone::FindOrFail($phone);
+        return view('phones.show',[
+            'phone' => $phone
+        ]);
     }
 
     /**

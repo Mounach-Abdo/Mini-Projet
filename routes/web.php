@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user','UtilisateurController@create');
+
+
+Route::resource('countries', 'CountryController'); // tout option

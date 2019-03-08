@@ -14,7 +14,10 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+    $countries = Country::all();
+        return view('countries/index',[
+            'countries' => $countries
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        //
+        return view('countries.create');
     }
 
     /**
@@ -35,7 +38,16 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       /* $request->validate([
+            'name' => 'required|alpha',
+            'phone' => 'required|numeric'
+        ]);
+*/
+        $country = new Country();
+        $country->name = $request->name;
+        $country->phone_code = $request->phone;
+        $country->save();
+        return redirect('countries/'.$country->id);
     }
 
     /**
@@ -44,9 +56,12 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
+    public function show($country)
     {
-        //
+        $country = Country::FindOrFail($country);
+        return view('countries.show',[
+            'country' => $country
+        ]);
     }
 
     /**

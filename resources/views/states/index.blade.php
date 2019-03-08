@@ -5,18 +5,16 @@
         <br>
         <br>
         <br>
-        <h2>List of all countries</h2>
+        <h2>List of all states</h2>
     <table class="table" >
         <tr>
-            <td>ID</td>
+            <td>State </td>
             <td>Country name</td>
-            <td>Phone code</td>
         </tr>
-            @foreach($countries as $country)
+            @foreach($states as $state)
             <tr>
-                <td>{{ $country->id }}</td>
-                <td>{{ $country->name }}</td>
-                <td>{{ $country->phone_code }}</td>
+                <td>{{ $state->name }}</td>
+                <td>{{ $state->country->name }}</td>
             </tr>
             @endforeach
     </table>
