@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('content')
 
-
-@extends('layouts.master')
-@section('content')
-
 <div class="container">
         <br>
         <br>
@@ -18,7 +14,5 @@
         </tr>
     </table>
 </div>
-
-@endsection
 
 @endsection

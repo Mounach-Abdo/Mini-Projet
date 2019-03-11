@@ -56,7 +56,7 @@ class StateController extends Controller
      * @param  \App\State  $state
      * @return \Illuminate\Http\Response
      */
-    public function show(State $state)
+    public function show($state)
     {
         $state = State::FindOrFail($state);
         return view('states.show',[
