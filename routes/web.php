@@ -18,3 +18,5 @@ Route::get('/', function () {
 
 
 Route::resource('countries', 'CountryController'); // tout option
+
+Route::resource('states', 'StateController');

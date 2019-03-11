@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Country ;
 use App\State;
-use APP\Country;
-use App\Adress;
 use Illuminate\Http\Request;
 
 class StateController extends Controller
@@ -29,15 +28,9 @@ class StateController extends Controller
      */
     public function create()
     {
-        $country = Country::all();
-
-        $adress = Adress::all();
-
-
-
+        $countries = Country::all();
         return view('states.create',[
-            'country' => $country,
-            'adress' => $adress
+            'countries' => $countries
     ]);
     }
 
@@ -50,9 +43,8 @@ class StateController extends Controller
     public function store(Request $request)
     {
         $state = new State();
-        $state->name = $request->name;
+        $state->name = $request->state;
         $state->country_id = $request->country;
-        $state->adress_id = $request->adress;
         $state->save();
         return redirect('states/'.$state->id);
         

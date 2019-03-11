@@ -5,7 +5,7 @@
         <br>
         <br>
         <br>
-        <h2>List of all states</h2>
+        <h2>List of all states :</h2>
     <table class="table" >
         <tr>
             <td>State </td>

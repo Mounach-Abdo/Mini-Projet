@@ -17,7 +17,6 @@ class CreateStatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('country_id');
-            $table->bigInteger('adress_id');
             $table->timestamps();
         });
     }
